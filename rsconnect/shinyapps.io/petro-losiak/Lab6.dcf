@@ -1,0 +1,12 @@
+name: Lab6
+title: Lab6
+username:
+account: petro-losiak
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 235981
+bundleId: 1077712
+url: https://petro-losiak.shinyapps.io/Lab6/
+when: 1510786779.2361
+asMultiple: FALSE
+asStatic: FALSE
