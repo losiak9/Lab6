@@ -1,21 +1,22 @@
 library(shiny)
-library(shiny)
 
 checkbox <- function(){
-  data <- read.table("data.txt", sep = ";", header = TRUE, encoding = "UTF-8")
+  data <- read.table("database.txt", sep = ";", header = TRUE, encoding = "UTF-8")
+  data <- data[!(data[, 2] == '?'),]
   result <- as.vector(data[,1])
   names(result) <- result
   return (result)
 }
 
 shinyUI(pageWithSidebar(
-  headerPanel("Different countries GDP"),
+  headerPanel("Cars"),
   
   sidebarPanel(
-    checkboxGroupInput("country", "Select country:", checkbox())
+    checkboxGroupInput("year", "Select car date:", checkbox())
   ),
   
   mainPanel(
     plotOutput("plot")
   )
-))
+)
+)
