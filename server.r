@@ -2,7 +2,7 @@ read.data <- function(){
   read.table("data.txt", sep = ";", header = TRUE, encoding = "UTF-8", check.names=FALSE)
 }
 data <- read.data()
-colors <- c("#750db1", "#1dc87a")
+colors <- c("#750db1", "#1dc87a", "#FF0000")
 draw_ <- function(countries, j){
   index <- 0
   
@@ -16,10 +16,10 @@ draw_ <- function(countries, j){
   }
   if(j == 1){
     print(data[1, 1:51])
-    plot(1:51, data[index, 1:51], type = "o", xaxt = "n",xlab = "X Line", ylab = "Y Line", col = colors[j], ylim = c(0,145))
+    plot(1:51, data[index, 1:51], type = "o", xaxt = "n",xlab = "DISTANCE", ylab = "SPEED", col = colors[j], ylim = c(0,145))
     axis(1, at = 1:length(data), labels = colnames(data))
   } else {
-    lines(1:51, data[index, 1:51], type = "o", xaxt = "n", xlab = "X Line", ylab = "Y Line", col = colors[j])
+    lines(1:51, data[index, 1:51], type = "o", xaxt = "n", xlab = "DISTANCE", ylab = "SPEED", col = colors[j])
   }
   legend("topright", legend = countries, col = colors, lty = 1)
 }
