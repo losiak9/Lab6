@@ -1,4 +1,5 @@
 library(shiny)
+library(shiny)
 
 checkbox <- function(){
   data <- read.table("data.txt", sep = ";", header = TRUE, encoding = "UTF-8")
