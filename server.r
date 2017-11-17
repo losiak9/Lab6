@@ -1,5 +1,9 @@
 read.data <- function(){
-  read.table("data.txt", sep = ";", header = TRUE, encoding = "UTF-8", check.names=FALSE)
+  data <- read.table("database.txt", sep = ";", header = TRUE, encoding = "UTF-8")
+  for(col in 2:ncol(data)){
+    data[, col] <- as.numeric.factor(data[, col])
+  }
+  return (data)
 }
 
 data <- read.data()
@@ -20,12 +24,12 @@ draw_ <- function(countries, j){
   }
  
   if(j == 1){
-    print(data[1, 2:25])
+    print(data[1, 2:51])
     
-    plot(2:25, data[index, 2:25], type = "o", xaxt = "n",xlab = "Years", ylab = "Rate of GDP", col = colors[j], ylim = c(0,80000))
+    plot(2:51, data[index, 2:51], type = "o", xaxt = "n",xlab = "Years", ylab = "Rate of GDP", col = colors[j], ylim = c(0,80000))
     axis(1, at = 1:length(data), labels = colnames(data))
   } else {
-    lines(2:25, data[index, 2:25], type = "o", xaxt = "n", xlab = "Years", ylab = "Rate of GDP", col = colors[j])
+    lines(2:51, data[index, 2:51], type = "o", xaxt = "n", xlab = "Years", ylab = "Rate of GDP", col = colors[j])
   }
   legend("topright", legend = countries, col = colors, lty = 1)
 }
