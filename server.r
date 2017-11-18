@@ -2,7 +2,7 @@ read.data <- function(){
   read.table("data.txt", sep = ";", header = TRUE, encoding = "UTF-8", check.names=FALSE)
 }
 data <- read.data()
-colors <- c("#750db1", "#1dc87a", "#FF0000")
+colors <- c("#1dc87a", "#FF0000")
 draw_ <- function(countries, j){
   index <- 0
   
